@@ -1,0 +1,8 @@
+- name: copy over the configuration file
+  copy: src=default.conf dest=/etc/nginx/conf.d/default.conf mode=0644
+  notify: restart nginx
+- name: create directory for the static content
+  file: path=/etc/nginx/html state=directory
+- name: copy over website content
+  copy: src=index.html dest=/etc/nginx/html/index.html
+
