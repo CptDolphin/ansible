@@ -1,7 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-	config.vm.box = "ansible-ubuntu-1204-i386"
-	config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-i386-vagrant-disk1.box"
+	config.vm.box = "centos_7"
+	config.vm.box_url = "https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box"
 	config.vm.define "control" do |control|
     control.vm.network :private_network, ip: "192.168.61.10"
   end
