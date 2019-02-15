@@ -1,0 +1,12 @@
+---
+mysql_user: mysql
+mysql_port: 3306
+mysql_datadir: /var/lib/mysql
+mysql_pid: /var/run/mysqld/mysld.pid
+mysql_socket: /var/run/mysld/mysqld.sock
+mysql_cnfpath: /etc/mysql/my.cnf
+mysql_service: mysql-server
+mysql_bind: 127.0.0.1
+#mysql_bind: "{{ ansible_enp0s8.ipv4.address }}"
+mysql_bind: 192.168.61.11
+mysql_pkg: mysql-server

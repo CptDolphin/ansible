@@ -1,0 +1,5 @@
+mysql_socket: /var/run/mysld/mysqld.sock
+mysql_cnfpath: /etc/mysql/my.cnf
+mysql_service: mysql-server
+mysql_bind: 127.0.0.1
+mysql_pkg: mysql-server
