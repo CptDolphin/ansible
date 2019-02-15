@@ -1,0 +1,3 @@
+- name: install mysql server
+  #apt: name=mysql-server update_cache=yes
+  apt: name="{{ mysql_pkg }}" update_cache=yes
