@@ -1,5 +1,6 @@
 --- 
-- hosts: database 
+- hosts: web 
+#- hosts: database 
   remote_user: vagrant
   sudo: yes
   roles:
