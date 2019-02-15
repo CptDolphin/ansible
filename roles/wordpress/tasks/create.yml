@@ -1,0 +1,18 @@
+---
+- name: make sure mysql-python packages are installed
+  yum: name=MySQL-python state=present
+
+- name: create wordpress group
+  group: name={{ wp_group }} state=present
+
+- name: create wordpress user
+  user: name={{ wp_user }} group=wordpress state=present
+
+- name: create wordpress docroot
+  file: path={{ wp_srcdir }} state=directory owner={{ wp_user }} group={{ wp_group }}
+
+- name: create wordpress database
+  mysql_db: name={{ wp_dbname }} state=present
+
+- name: create wordpress database user
+  mysql_user: name={{ wp_dbuser }} password={{ wp_dbpass }} priv='{{ wp_dbname }}:ALL' host='localhost' state=present
