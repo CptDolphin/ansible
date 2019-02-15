@@ -1,2 +1,2 @@
 - name: install nginx web server and ensure its at the latest version
-  apt: name=nginx state=latest
+  yum: name=nginx state=latest
