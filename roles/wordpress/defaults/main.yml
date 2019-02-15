@@ -1,2 +1,13 @@
 ---
-# defaults file for wordpress
+wp_version: latest
+wp_srcdir: /src 
+wp_group: wordpress
+wp_user: wordpress
+wp_group: wordpress
+wp_dbname: wordpress 
+wp_dbuser: worduser
+wp_dbpass: secret
+wp_dbhost: localhost 
+wp_sitedir: word
+wp_shasum: 42ca594afc709cbef8528a6096f5a1efe96dcf3164e7ce321e87d57ae015cc82
+
