@@ -3,4 +3,4 @@
 - name: create devops user
   user: name=devops comment="Devops User" uid=2001 group=devops
 - name: install htop package
-  action: apt name=htop state=present update_cache=yes
+  action: yum name=htop state=present update_cache=yes
