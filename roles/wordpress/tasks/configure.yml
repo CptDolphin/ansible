@@ -1,0 +1,13 @@
+---
+- name: change owner of wordpress source dir
+  file: path={{ wp_srcdir }} owner={{ wp_user }} group={{ wp_group }} state=directory recurse=yes
+
+- name: get unique salt for wordpress
+  local_action: command curl https://api.wordpress.org/secret-key/1.1/salt
+  register: wp_salt
+  become: no 
+
+- name: copy wordpress template
+  template: src=wp-config.php.j2 dest="{{ wp_srcdir }}/wp-config.php" mode=0644
+
+
