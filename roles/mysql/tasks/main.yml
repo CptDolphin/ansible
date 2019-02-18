@@ -6,5 +6,7 @@
 - include: install_Debian.yml
   when: ansible_os_family == 'Debian'
 - include: configure.yml
+  when: server
 - include: service.yml
+  when: server
 

@@ -1,0 +1,12 @@
+- name: verify state
+  command: systemctl status mysql
+  ignore_errors: yes
+  changed_when: false
+  register: mysql_status
+- name: install mysql
+  when: mysql_status.rc != 0
+#  when: mysql_status.stdout.find("active (running)") == -1
+  shell: |
+    wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+    sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+    sudo yum install -y {{ mysql_pkg }} 

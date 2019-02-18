@@ -1,2 +1,6 @@
-- name: install mysql server
-  apt: name="{{ mysql_pkg }}" update_cache=yes
+- name: install clinet 
+  apt: name="{{ pkg.client }}" update_cache=yes
+- name: install server
+  apt: name="{{ pkg.server }}" update_cache=yes
+- name: install python package
+  apt: name="{{ pkg.python }}" update_cache=yes
