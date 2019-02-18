@@ -1,6 +1,11 @@
 ---
-mysql_socket: /var/lib/mysql/mysql.sock
-mysql_cnfpath: /etc/my.cnf
-mysql_service: mysql
-mysql_bind: 0.0.0.0
-mysql_pkg: mysql-server
+mysql:
+  config:
+    socket: /var/lib/mysql/mysql.sock
+    cnfpath: /etc/my.cnf
+    service: mysqld
+    bind: 0.0.0.0
+pkg:
+  server: mysql-server
+  client: mysql
+  python: MySQL-python
