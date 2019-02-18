@@ -1,8 +1,14 @@
 --- 
-- hosts: web 
-#- hosts: database 
+- hosts: database 
+#- hosts: web 
   remote_user: vagrant
   sudo: yes
   roles:
-   - { role: mysql, mysql_bind: "{{ ansible_eth1.ipv4.address }}" }
+   - { role: mysql }
+#   - { role: mysql, mysql_bind: "{{ ansible_eth1.ipv4.address }}" }
 #   - { role: mysql, mysql_bind: "{{ ansible_enp0s8.ipv4.address }}" }
+  vars:
+    server: true
+    mysql:
+      config: 
+        bind: "{{ ansible_eth1.ipv4.address }}"
