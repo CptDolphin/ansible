@@ -3,6 +3,9 @@
   get_url: url=https://wordpress.org/{{ wp_version }}.tar.gz dest={{ wp_srcdir }}/wordpress-{{ wp_version }}.tar.gz 
 
 - name: extract wordpress
-  command: chdir="{{ wp_srcdir }}" bin/tar xvf wordpress-{{ wp_version }}.tar.gz creates={{ wp_srcdir }}/wordpress
+  command: chdir="{{ wp_srcdir }}" bin/tar xvf wordpress-{{ wp_version }}.tar.gz creates={{ wp_srcdir }}/
+  register: wp_download
+
+- debug: var=wp_download.rc
 
 
