@@ -3,4 +3,6 @@
   sudo: yes 
   roles:
     - web
+    - php5-fpm
     - wordpress
+#test

@@ -1,3 +1,16 @@
 - name: create mysql config
-  template: src=my.cnf.j2 dest="{{ mysql.config.cnfpath }}" mode=0644
-  notify: restart mysql
+  mysql_db: 
+    name:     "{{ item.key }}" 
+    state:    "{{ item.value.state }}"
+  with_dict:  "{{ mysql.databases }}"
+- name: create mysql users:
+  mysql_users:
+    name:     "{{ item.key }}"
+    host:     "{{ item.value.host }}"
+    password: "{{ item.value.pass }}"
+    priv:     "{{ item.value.state }}"
+    state:    "{{ item.value.priv }}"
+  with_dict:  "{{ mysql.users }}"
+
+#  template: src=my.cnf.j2 dest="{{ mysql.config.cnfpath }}" mode=0644
+#  notify: restart mysql
