@@ -1,1 +1,2 @@
 changes done on master branchassd
+be sure to have you ssh key set u on public key in your git repositpry
