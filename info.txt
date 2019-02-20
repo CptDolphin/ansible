@@ -1,2 +1,3 @@
 changes done on master branchassd
 be sure to have you ssh key set u on public key in your git repositpry
+this will cause a merge pull request on github
